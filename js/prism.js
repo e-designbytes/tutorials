@@ -3097,9 +3097,9 @@ Prism.languages.py = Prism.languages.python;
 	function getSettings(startElement) {
 		/** @type {Settings} */
 		var settings = {
-			'copy': '<img src="/assets/copy.svg" style="height: 16px;" alt="Copy">',
+			'copy': '<img src="assets/copy.svg" style="height: 16px;" alt="Copy">',
 			'copy-error': 'Press Ctrl+C to copy',
-			'copy-success': '<img src="/assets/copy.svg" style="height: 16px; display: inline;" alt="Copy"> Copied!',
+			'copy-success': '<img src="assets/copy.svg" style="height: 16px; display: inline;" alt="Copy"> Copied!',
 			'copy-timeout': 3000
 		};
 
