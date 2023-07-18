@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Maruqee Tutorial ❤️ Design Bytes</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/prism-custom.css">
+    <!-- <link rel="stylesheet" href="prism.css"> -->
+    <link rel="icon" type="img/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="font-inter flex justify-center text-darknavy ligatures-none">
+    
+    <!-- NAVIGATION -->
+    <nav class="xl px-8 pt-4 pb-12 flex justify-between items-center fixed w-full max-w-7xl bg-gradient-to-b from-white from-60% to-transparent">
+        <a href="/"><img src="assets/logo.svg"></a>
+        <div class="flex gap-6 items-center text-bold">
+            <!-- <a href="" class="uppercase hover:text-pinksands transition-colors duration-300">About</a> -->
+            <a href="https://ko-fi.com/designbytes" target="_blank">
+                <button class="flex justify-center items-center gap-2 px-6 py-2 rounded-full bg-darknavy text-white uppercase text-sm font-extrabold hover:bg-pinksands transition-colors duration-300">
+                    <img src="assets/logo-kofi.png" style="width: 20px;"> ko.fi
+                </button>
+            </a>
+        </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div class="flex-col justify-center px-4 pt-40 pb-36 w-full max-w-2xl">
+        <!-- HEADER -->
+        <div class="flex flex-col gap-2 justify-center text-center">
+            <div class="flex justify-center gap-2 flex-wrap">
+                <div class="text-xs uppercase font-extrabold py-1 px-4 text-pinksands bg-pinksands-100 rounded-full">html/css</div>
+                <div class="text-xs uppercase font-extrabold py-1 px-4 text-pinksands bg-pinksands-100 rounded-full">css3 animations</div>
+            </div>
+            <h1 class="text-4xl tracking-tighter font-extrabold">Responsive Vertical Marquee</h1>
+            <p class="text-lg italic leading-6">Create an infinitely scrolling, responsive vertical marquee – without JavaScript.</p>
+        </div>
+
+        <!-- PREVIEW -->
+        <div class="pt-10 pb-10">
+            <iframe src="demos/demo-marquee.html" title="Vertical Marquee Demo" class="w-full h-96"></iframe>
+        </div>
+        <a href="https://github.com/e-designbytes" target="_blank">
+            <button class="flex justify-center items-center gap-2 px-4 py-2 rounded-full uppercase text-sm font-extrabold bg-darknavy text-white m-auto hover:bg-pinksands transition-colors duration-300">
+                <svg class="h-5 w-5" viewBox="0 0 24 24"><path fill="currentColor" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.79.042 2.895 2.895 0 0 1 3.772-2.809v-3.5a6.329 6.329 0 1 0 5.463 6.268V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.83 4.83 0 0 1-1.003-.104Z"/></svg>
+                 Watch the tutorial
+            </button>
+        </a>
+
+        <!-- STEP 1 -->
+        <div class="pt-20">
+            <h2 class="text-2xl tracking-tighter font-extrabold pb-2">Step 1</h2>
+            <p class="pb-2"> Paste the following html base structure inside of your <code class="inline text-sm text-pinksands">`&lt;body&gt;`</code> tag.</body></p>
+            <pre class="language-html max-h-96 overflow-scroll">
+            <code class="language-html">
+                &lt;div class="marquee"&gt;
+                    &lt;div class="marquee-container"&gt;
+                        &lt;div class="track"&gt;
+                            &lt;div class="sub-track"&gt;
+                                &lt;img src="images/image4.jpg" class="item"&gt;
+                                &lt;img src="images/image5.jpg" class="item"&gt;
+                                &lt;img src="images/image6.jpg" class="item"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="sub-track"&gt;
+                                &lt;img src="images/image7.jpg" class="item"&gt;
+                                &lt;img src="images/image8.jpg" class="item"&gt;
+                                &lt;img src="images/image9.jpg" class="item"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="sub-track"&gt;
+                                &lt;img src="images/image1.jpg" class="item"&gt;
+                                &lt;img src="images/image2.jpg" class="item"&gt;
+                                &lt;img src="images/image3.jpg" class="item"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="sub-track"&gt;
+                                &lt;img src="images/image4.jpg" class="item"&gt;
+                                &lt;img src="images/image5.jpg" class="item"&gt;
+                                &lt;img src="images/image6.jpg" class="item"&gt;
+                            &lt;/div&gt;
+                            &lt;div class="sub-track"&gt;
+                                &lt;img src="images/image7.jpg" class="item"&gt;
+                                &lt;img src="images/image8.jpg" class="item"&gt;
+                                &lt;img src="images/image9.jpg" class="item"&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code>
+            </pre>
+            <h3 class="text-xl tracking-tighter font-extrabold pt-4 pb-2">🔥 Tips</h3>
+            <ul class="list-disc list-outside pl-8">
+                <li class="pb-2">For this to be fully responsive and seamless, you need to have an odd number of sub-tracks inside of the track.</li>
+                <li class="pb-2">The sub-tracks need to mirror each other (A B C B A) to ensure the loop is seamless.</li>
+                <li>The sub-tracks can contain as many items as you want, but all the sub-tracks need to have the same height (we'll take care of this in the css).</li>
+            </ul>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="pt-20">
+            <h2 class="text-2xl tracking-tighter font-extrabold pb-2">Step 2</h2>
+            <p class="pb-2">Let's take a second to understand the structure that makes the marquee responsive and loop seamlessly.</p>
+            <p >In the diagram below, the marquee container could be of any height (100vh, 10em, 50%, 100px) as long as all of the other heights follow their ratios accordingly.</p>
+            <img class="m-auto mt-8" src="assets/diagram.svg">
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="pt-20">
+            <h2 class="text-2xl tracking-tighter font-extrabold pb-2">Step 3</h2>
+            <p class="pb-2">Paste the following css inside your <code class="inline text-sm text-pinksands">`&lt;style&gt;`</code> tag, or create a <code class="inline text-sm text-pinksands">`style.css`</code> sheet and link it inside of the <code class="inline text-sm text-pinksands">`&lt;head&gt;`</code> tag.</p>
+            <pre class="language-css max-h-96 overflow-scroll">
+            <code class="language-css">
+                .marquee {
+                    width: 100%;
+                    margin: auto;
+                  }
+                  
+                  .marquee-container {
+                    height: 100vh;
+                    width: 100%;
+                    margin: 0 auto;
+                    line-height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                  
+                  .track {
+                    margin: 0 auto;
+                    position: absolute;
+                    top: 0;
+                    height: 300vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    animation: marquee_animation 25s linear infinite;
+                    -webkit-animation: marquee_animation 25s linear infinite;
+                    -moz-animation: marquee_animation 25s linear infinite;
+                  }
+                  
+                  /* PAUSE TRACK ON HOVER
+                  .track:hover {
+                    animation-play-state: paused;
+                  }
+                  */
+                  
+                  .sub-track {
+                    width: 40vh;
+                    height: 100vh;
+                    position: relative;
+                    text-align: center;
+                    margin-top: -1.5vh;
+                  }
+                  
+                  
+                  .item {
+                    width: 30vh;
+                    height: 30vh;
+                    margin: 1.5vh auto;
+                    object-fit: cover;
+                    overflow: hidden;
+                    border-radius: 1em;
+                  }
+                  
+                  @media (max-width: 640px){
+                      .sub-track {
+                      width: 100%;
+                    }
+                      .item { 
+                      width: 100%;
+                      margin: 1.5vh 0vh;
+                    }
+                  }
+                  
+                  @-webkit-keyframes marquee_animation {
+                    0% {
+                      top: 84vh;
+                    }
+                    100% {
+                      top: -200vh;
+                    }
+                  }
+                  
+                  @-moz-keyframes marquee_animation {
+                    0% {
+                      top: 84vh;
+                    }
+                    100% {
+                      top: -200vh;
+                    }
+                  }
+            </code>
+            </pre>
+            <h3 class="text-xl tracking-tighter font-extrabold pt-4 pb-2">🔥 Tips</h3>
+            <ul class="list-disc list-outside pl-8">
+                <li class="pb-2">The height of the marquee-container must equal the height of each sub-track.</li>
+                <li class="pb-2">The height of the track must equal the <b>number of unique sub-tracks</b> * <b>sub-track height</b>.</li>
+                <li class="pb-2">The height of the items inside the sub-track can vary in height, but they all need to fit inside the sub-track.</li>
+                <li class="pb-2">The 0% and 100% keyframes are dependent on the height of your sub-track:<br>
+                    <span class="text-xs block pt-2 leading-6"><b class="text-pinksands">0%</b> = number of items * item height - (# of unique sub-tracks - 1) * (total vertical margins on each item)<br>
+                    <b class="text-pinksands">100%</b> = (# of unique sub-tracks- 1) * sub-track height <br>
+                👉 This doesn't <i>always</i> work seamlessly – play with the start and stop positions until you get it spot-on.</span></li>
+                <li>Pay attention to the total height of your sub-track container and items if you are adding spacing! </li>
+            </ul>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="pt-20">
+            <h2 class="text-2xl tracking-tighter font-extrabold pb-2">Step 4</h2>
+            <p class="pb-2">Time to customize!</p>
+            <p class="pb-2">Insert your own images or text elements, change their dimensions, add or remove items or sub-tracks, change the speed of the animation, etc. </p>
+            <p>Have fun tinkering, if you end up using it on a project, share it with me on
+                <a class="font-bold text-cyan-500 hover:text-pinksands transition-colors duration-300" href="https://twitter.com/intent/tweet?text=Yo%20@heavyweight,%20check%20out%20my%20project!">Twitter</a> or tag me on 
+                <a class="font-bold text-cyan-500 hover:text-pinksands transition-colors duration-300" href="https://www.tiktok.com/@heavygweit">TikTok</a>!</p>
+            <h3 class="text-xl tracking-tighter font-extrabold pt-4 pb-2">🔥 Tips</h3>
+            <ul class="list-disc list-outside pl-8">
+                <li class="pb-2">If you want the track to pause when the mouse hovers over a sub-track, remove the comment around the following code:<br>
+                <code class="block text-sm text-pinksands pt-2">`.track:hover {animation-play-state: paused;}`</code></li>
+            </ul>
+        </div>
+
+
+    </div>
+    <!-- FOOTER -->
+    <footer class="z-10 fixed bottom-0 pb-4 pt-12 w-full flex items-center justify-center gap-2 text-xs bg-gradient-to-t from-white from-60% to-transparent">
+        <a href="https://www.tiktok.com/@heavygweit" target="_blank">
+            <button class="flex justify-center items-center gap-2 px-4 py-2 rounded-full uppercase font-extrabold hover:text-white hover:bg-pinksands transition-colors duration-300">
+                <svg class="h-4 w-4" viewBox="0 0 24 24"><path fill="currentColor" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.79.042 2.895 2.895 0 0 1 3.772-2.809v-3.5a6.329 6.329 0 1 0 5.463 6.268V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.83 4.83 0 0 1-1.003-.104Z"/></svg>
+                 @heavygweit
+            </button>
+        </a>
+        <a href="https://github.com/e-designbytes" target="_blank">
+            <button class="flex justify-center items-center gap-2 px-4 py-2 rounded-full uppercase font-extrabold hover:text-white hover:bg-pinksands transition-colors duration-300">
+                <svg class="h-4 w-4" viewBox="0 0 20 20"><path fill="currentColor" d="M10 0C4.475 0 0 4.475 0 10a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.287-.6-1.175-1.025-1.412-.35-.188-.85-.65-.013-.663.788-.013 1.35.725 1.538 1.025.9 1.512 2.337 1.087 2.912.825.088-.65.35-1.088.638-1.338-2.225-.25-4.55-1.112-4.55-4.937 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.274.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 20 10c0-5.525-4.475-10-10-10Z"></svg>
+                @e-designbytes
+            </button>
+        </a>
+    </footer>
+    
+    <script src="js/prism.js"></script>
+
+</body>
+</html>
