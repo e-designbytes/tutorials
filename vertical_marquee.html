@@ -107,88 +107,75 @@
             <p class="pb-2">Paste the following css inside your <code class="inline text-sm text-pinksands">`&lt;style&gt;`</code> tag, or create a <code class="inline text-sm text-pinksands">`style.css`</code> sheet and link it inside of the <code class="inline text-sm text-pinksands">`&lt;head&gt;`</code> tag.</p>
             <pre class="language-css max-h-96 overflow-scroll">
             <code class="language-css">
-                .marquee {
+                .marquee-container {
                     width: 100%;
-                    margin: auto;
-                  }
-                  
-                  .marquee-container {
                     height: 100vh;
-                    width: 100%;
                     margin: 0 auto;
-                    line-height: 100%;
                     position: relative;
-                    overflow: hidden;
-                    display: flex;
+                    display: flex; 
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
-                  }
-                  
-                  .track {
-                    margin: 0 auto;
+                    justify-content: flex-start;
+                    overflow: hidden;
+                }
+                
+                .track {
                     position: absolute;
-                    top: 0;
+                    top: 0vh;
                     height: 300vh;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
-                    animation: marquee_animation 25s linear infinite;
-                    -webkit-animation: marquee_animation 25s linear infinite;
-                    -moz-animation: marquee_animation 25s linear infinite;
-                  }
-                  
-                  /* PAUSE TRACK ON HOVER
-                  .track:hover {
+                    justify-content: flex-start;
+                    animation: marquee_animation 10s linear infinite;
+                    -webkit-animation: marquee_animation 10s linear infinite;
+                    -moz-animation: marquee_animation 10s linear infinite;
+                    gap: 1.5vh;
+                }
+                
+                .track:hover {
                     animation-play-state: paused;
-                  }
-                  */
-                  
-                  .sub-track {
-                    width: 40vh;
+                }
+                
+                .sub-track {
+                    width: 60vw;
+                    min-width: 300px;
+                    max-width: 800px;
                     height: 100vh;
                     position: relative;
-                    text-align: center;
-                  }
-                  
-                  
-                  .item {
-                    width: 30vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 1.5vh;
+                }
+                
+                .item {
+                    width: 45vh;
                     height: 30vh;
-                    margin: 1.5vh auto;
                     object-fit: cover;
                     overflow: hidden;
-                    border-radius: 1em;
-                  }
-                  
-                  @media (max-width: 640px){
-                      .sub-track {
-                      width: 100%;
-                    }
-                      .item { 
-                      width: 100%;
-                      margin: 1.5vh 0vh;
-                    }
-                  }
-                  
-                  @-webkit-keyframes marquee_animation {
+                    border-radius: 0.5em;
+                
+                }
+                
+                @-webkit-keyframes marquee_animation {
                     0% {
-                      top: 84vh;
+                        top: -16.5vh;
                     }
                     100% {
-                      top: -200vh;
+                        top: -300vh;
                     }
-                  }
-                  
-                  @-moz-keyframes marquee_animation {
+                }
+                
+                @-moz-keyframes marquee_animation {
                     0% {
-                      top: 84vh;
+                        top: -16.5vh;
                     }
                     100% {
-                      top: -200vh;
+                        top: -300vh;
                     }
-                  }
+                }
             </code>
             </pre>
             <h3 class="text-xl tracking-tighter font-extrabold pt-4 pb-2">🔥 Tips</h3>
@@ -197,10 +184,10 @@
                 <li class="pb-2">The height of the track must equal the <b>number of unique sub-tracks</b> * <b>sub-track height</b>.</li>
                 <li class="pb-2">The height of the items inside the sub-track can vary in height, but they all need to fit inside the sub-track.</li>
                 <li class="pb-2">The 0% and 100% keyframes are dependent on the height of your sub-track:<br>
-                    <span class="text-xs block pt-2 leading-6"><b class="text-pinksands">0%</b> = number of items * item height - (# of unique sub-tracks - 1) * (total vertical margins on each item)<br>
+                    <span class="text-xs block pt-2 leading-6"><b class="text-pinksands">0%</b> = (item height / 2 + flex gap) * (-1)<br>
                     <b class="text-pinksands">100%</b> = (# of unique sub-tracks- 1) * sub-track height <br>
                 👉 This doesn't <i>always</i> work seamlessly – play with the start and stop positions until you get it spot-on.</span></li>
-                <li>Pay attention to the total height of your sub-track container and items if you are adding spacing! </li>
+                <li>Pay attention to the total height of your sub-track container and items if you are adding spacing through flex gap or margins! </li>
             </ul>
         </div>
 
@@ -208,7 +195,7 @@
         <div class="pt-20">
             <h2 class="text-2xl tracking-tighter font-extrabold pb-2">Step 4</h2>
             <p class="pb-2">Time to customize!</p>
-            <p class="pb-2">Insert your own images or text elements, change their dimensions, add or remove items or sub-tracks, change the speed of the animation, etc. </p>
+            <p class="pb-2">Insert your own images or text elements, change their dimensions, add or remove items or sub-tracks, change the speed of the animation, pause the track on hover, etc. </p>
             <p>Have fun tinkering, if you end up using it on a project, share it with me on
                 <a class="font-bold text-cyan-500 hover:text-pinksands transition-colors duration-300" href="https://twitter.com/intent/tweet?text=Yo%20@heavyweight,%20check%20out%20my%20project!">Twitter</a> or tag me on 
                 <a class="font-bold text-cyan-500 hover:text-pinksands transition-colors duration-300" href="https://www.tiktok.com/@heavygweit">TikTok</a>!</p>
